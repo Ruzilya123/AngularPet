@@ -1,0 +1,39 @@
+<div class="container">
+  <br />
+  <h1>Автомобиль: {{ car.name }}</h1>
+  <div>Модель: {{ car.model }}</div>
+  <div class="alert alert-success">
+    Характеристики автомобиля:
+    <ul>
+      <li>Скорость: {{ car.speed }} км/ч</li>
+      <li>Цвет машины: {{car.colors.car}}</li>
+      <li>Цвет салона: {{car.colors.salon}}</li>
+      <li>Цвет колес: {{car.colors.wheels}}</li>
+    </ul>
+  </div>
+
+  <h5>Возможности автомобиля</h5>
+
+  <form (submit)="addOption(option.value)">
+    <div class='form-group'>
+      <label for="option">Добавьте новую возможность вашего автомобиля</label>
+      <br />
+      <input id="option" type="text" placeholder="Введите возможность" class="form-control" #option />
+      <br />
+      <button class="btn btn-primary" type="submit">Добавить</button>
+    </div>
+  </form>
+
+  <br />
+
+  <div class="alert alert-warning">
+    <ul>
+      <li *ngFor="let opt of car.options">{{opt}}</li>
+    </ul>
+  </div>
+
+  <h5>Выберите автомобиль</h5>
+  <button class="btn btn-danger" (click)="carSelect('bmw')">BMW</button>
+  <button class="btn btn-success" (click)="carSelect('audi')">Audi</button>
+  <button class="btn btn-info" (click)="carSelect('kia')">KIA</button>
+</div>

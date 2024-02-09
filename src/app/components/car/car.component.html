@@ -28,7 +28,10 @@
 
   <div class="alert alert-warning">
     <ul>
-      <li *ngFor="let opt of car.options">{{opt}}</li>
+      <li *ngFor="let opt of car.options">
+        {{opt}}
+        <button class="btn btn-warning btn-sm" (click)="deleteOpt(opt)" >X</button>
+      </li>
     </ul>
   </div>
 
